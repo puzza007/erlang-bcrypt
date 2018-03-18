@@ -9,13 +9,13 @@ erlang-bcrypt is a wrapper around the OpenBSD Blowfish password hashing algorith
 Basic build instructions
 ------------------------
 
-1.  Build it (project uses rebar3, but I’ve included a Makefile):
+1.  Build it:
 
-        make
+        rebar3 compile
 
-2.  Run it (simple way, starting sasl, crypto and bcrypt):
+2.  Run it:
 
-        erl -pa ebin -boot start_sasl -s crypto -s bcrypt
+        rebar3 shell
 
 Basic usage instructions
 ------------------------
