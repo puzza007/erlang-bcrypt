@@ -8,3 +8,7 @@ otp_release:
   - 20.0
 
 script: rebar3 update && rebar3 eunit && rebar3 dialyzer && DEBUG=1 rebar3 coveralls send
+
+cache:
+  directories:
+  - $HOME/.cache/rebar3/
