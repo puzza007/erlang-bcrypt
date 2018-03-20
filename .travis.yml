@@ -7,7 +7,7 @@ otp_release:
   - 19.3
   - 20.0
 
-script: rebar3 update && rebar3 eunit && rebar3 dialyzer && DEBUG=1 rebar3 coveralls send
+script: rebar3 update && rebar3 eunit && rebar3 dialyzer && rebar3 coveralls send
 
 cache:
   directories:
