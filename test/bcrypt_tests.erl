@@ -104,3 +104,11 @@ pair_port_test_() ->
 bad_salt_test_() ->
     {setup, fun() -> ok = start() end,
      [?_assert({error, invalid_salt} == bcrypt:hashpw(<<"foo">>, <<"bar">>))]}.
+
+invalid_rounds_low_test_() ->
+    {setup, fun() -> ok = start() end,
+     [?_assert({error, invalid_rounds} =:= bcrypt:gen_salt(3))]}.
+
+invalid_rounds_high_test_() ->
+    {setup, fun() -> ok = start() end,
+     [?_assert({error, invalid_rounds} =:= bcrypt:gen_salt(32))]}.
